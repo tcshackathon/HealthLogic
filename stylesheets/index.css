@@ -1,0 +1,346 @@
+#dial-0 .needle path {
+	fill: white;
+}
+
+#dial-1 .needle path {
+	fill: green;
+}
+
+#dial-2 .needle path {
+	fill: green;
+}
+	  
+circle.label {
+	fill: white;
+}       
+
+line.label {
+	stroke: white; 
+	stroke-width: 1px;
+}
+
+text.label {
+	font-family: Arial;
+	font-size: 12px;
+	fill: white; 
+}
+
+#dial-1 text.label {
+	font-size: 12px;      
+} 
+
+#dial-2 text.label {
+	font-size: 14px;      
+} 
+
+
+body {
+	width:100%;
+	height: 100%;
+	
+	z-index:-1;
+}
+
+
+
+.whiteBG{
+	background-color: #ffffff;
+	height: 3.5em;
+	width:100%;
+	margin-top:.1em;
+}
+
+.whiteBGButtom1{
+	background-color: #ffffff;
+	
+	height:0.7em;
+	width:100%;
+}
+
+
+.whiteBGSubButtom1{
+	/*
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+	*/
+	display: table; 
+	/*border: 2px solid black;*/
+	height:100%;
+	
+}
+
+
+.whiteBGSubButtom11{
+	/*background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+	*/
+	display: table; 
+	
+	/*border: 2px solid black;*/
+	height:100%;
+
+}
+.whiteBGButtom2{
+	background-color: #ffffff;
+	
+	height:1.8em;
+	width:100%;
+	
+}
+
+.whiteBGDiv{
+	background-color: #ffffff;
+	height:100%;
+	width: 0.1em;
+	
+}
+
+
+.topDiv {
+	
+	z-index:1;
+	
+	
+}
+
+
+.redBG{
+	
+				
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+	height: 1em;
+	display: table; 
+	border: 1px solid black;
+	width:50%;
+}
+
+div.redBody{
+	
+	background:#6A6A6A;
+	height: 23.0em;
+	width:100%;
+	display:block;
+	z-index:1;
+	
+}
+
+div.redSubBody{
+	cursor:pointer;
+	border: 2px;
+	border-style:solid;
+	border-color:white;
+    border-image: linear-gradient(-45deg,gray 1%, #fff 100%) 15%;
+    background: -webkit-linear-gradient(top, #000000 0%,rgba(56,56,56,1) 13%,rgba(78,78,78,1) 27%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+
+	
+}
+
+div.redSubBody:active{
+	cursor:pointer;
+	border: 2px;
+	border-style:solid;
+	/*border-color:white;*/
+    border-image: linear-gradient(135deg,gray 1%, #fff 100%) 15%;
+   /* background: -webkit-linear-gradient(top, #000000 0%,rgba(56,56,56,1) 13%,rgba(78,78,78,1) 27%,rgba(78,78,78,1) 47%,#ffffff 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+   */
+   background:#000;
+}
+
+div.redSubBodyClicked{
+	cursor:pointer;
+	border: 2px;
+	border-style:solid;
+	/*border-color:white;*/
+    border-image: linear-gradient(135deg,gray 1%, #fff 100%) 15%;
+   /* background: -webkit-linear-gradient(top, #000000 0%,rgba(56,56,56,1) 13%,rgba(78,78,78,1) 27%,rgba(78,78,78,1) 47%,#ffffff 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+   */
+   background:#000;
+}
+
+
+div.whiteBox{
+	border: 1px solid white;
+	text-align:center;
+	border-radius: 3px;
+	/*background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+	*/
+	height: 2.4em;
+	width:100%;
+	display: table; 
+	
+	
+}
+
+div.whiteSubBox{
+	vertical-align: middle;
+	display: table-cell; 
+}
+
+.box{
+	/*
+	background: -webkit-linear-gradient(top, rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+	*/
+	background:none;
+	width: 50px;
+	height: 85px;
+	display: table; 
+	text-align: center;
+	border-radius: 3px;
+	color:white;
+}
+
+.box.innerBox{
+	vertical-align: middle;
+	display: table-cell; 
+	
+}
+
+@font-face {
+	font-family: 'digi';
+	/*src: url('http://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF'); */
+	src: url('../fonts/DS-DIGII.TTF');
+}
+
+font.digital{
+	font-size: 170%;
+	font-family: "digi";
+
+}
+
+font.digit{
+	font-size: 150%;
+	font-family: "digi";
+
+}
+
+
+font.shadow{
+	text-shadow:5px 5px 5px #000000;
+	font-family:"Helvetica";
+	font-weight:900;
+	font-size: 150%;
+	
+}
+
+font.Helvetica{
+	
+	font-family:"Helvetica";
+	font-weight:500;
+	font-size: 100%;
+}
+
+
+.textAlignCenter {
+	text-align:center; 
+	vertical-align: middle;
+	display: table-cell; 
+	color: white;
+}
+
+.textAlignLeft {
+	text-align:left; 
+	vertical-align: middle;
+	display: table-cell; 
+	color: white;
+}
+
+.textAlignRight {
+	text-align:right; 
+	vertical-align: middle;
+	display: table-cell; 
+	color: white;
+}
+
+.btn-default {
+	background-color:#C53030;
+	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+	color: white;
+	border-color: black;
+}
+
+btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: white;
+  background-color: #CC3300;
+  border-color: black;
+}
+
+a { color: inherit; } 
+
+.label-success{
+	background-color:#C53030;
+	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+	color: white;
+	margin-top: 3px;
+}
+
+
+.label-default{
+	background-color:#00FF00;
+	color: white;
+	margin-top: 3px;
+	
+}
+
+.label-primary{
+	background-color:#FF0000;
+	color: white;
+	margin-top: 3px;
+}
+
+
+.greyBG{
+	background-color: #6A6A6A;
+	vertical-align: middle;
+	display: table-cell; 
+	border: 1px solid black;
+	height: 11em;
+}
+
+.greySubBG{
+	/*background-color: #3E413E;*/
+	text-align: center;
+	display: table; 
+}
+
+
+.greySubBG-2{
+	/*background-color: #3E413E;*/
+	vertical-align: middle;
+	display: table-cell; 
+}
+
+.whiteBGButtom3{
+	background-color: #B8B8B8;
+	height:2em;
+	width:100%;
+	
+}
+
+
+.modal-dialog { 
+    margin-top: 30%;
+    margin-left: 40%;
+}
+
+@media (max-width: 767px) {
+  .modal-dialog-center { /* Edited classname 10/03/2014 */
+    width: 100%;
+  }
+} 
+
+.modal.large {
+    width: 80%; /* respsonsive width */
+    
+}
+
+#progressModal .modal-dialog
+{
+  width: 170px;/* your width */
+}
+
+.modal-content {
+  background-color: #000000;
+  opacity:.3;
+}
