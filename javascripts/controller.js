@@ -146,44 +146,33 @@ $(document).ready(function() {
 	});
 	*/
 	
-	$('#inboundProcess').mousedown(function(e){
+	$('#inboundProcess').click(function(e){
+
 		e.preventDefault();
-		document.getElementById("inboundProcess").className = "col-sm-4 col-md-4 redSubBodyClicked";
-	});
-	
-	
-	
-	$('#inboundProcess').mouseup(function(e){
-		
-		e.preventDefault();
-		
+		$('#inboundProcess').addClass('redBodyClicked');
 		setTimeout(function(){
-			document.getElementById("inboundProcess").className = "col-sm-4 col-md-4 redSubBody";
-		},30);
-		$('#FrontPage').toggle('drop',{},1000);
-		setTimeout(function(){
-			getLockboxInboundDetail();
-			$('#inboundProcessDetail').toggle('drop',{},1000);
-			/*
+			$('#FrontPage').toggle('drop',{},1000);
+			$('#inboundProcess').removeClass('redBodyClicked');
 			setTimeout(function(){
-				$('.greySubBG-2').addClass('hidden');
-			
-			},10000); */
-			setInterval(function(){
 				getLockboxInboundDetail();
-				
-				
-				if($('.boxFlip').hasClass('animated zoomIn')){
-					$('.boxFlip').removeClass('animated zoomIn');
-				
-				}
-				else{
+				$('#inboundProcessDetail').toggle('drop',{},1000);
+				setInterval(function(){
+					getLockboxInboundDetail();
+					if($('.boxFlip').hasClass('animated zoomIn')){
+						$('.boxFlip').removeClass('animated zoomIn');
 					
-					$('.boxFlip').addClass('animated zoomIn');
-				}	
-			},10000);
-			
-		},1200);
+					}
+					else{
+						
+						$('.boxFlip').addClass('animated zoomIn');
+					}	
+				},350000);
+				
+			},1200);
+		
+		
+		},100);
+
 		//console.log($('#FrontPage'));
 	});
 	
