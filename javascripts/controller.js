@@ -197,6 +197,37 @@ $(document).ready(function() {
 	
 	}
 	
+	
+	
+	$('#KeyIn').click(function(e){
+
+		e.preventDefault();
+
+		
+		document.getElementById('cmn-toggle-1').checked = true;
+		$('#KeyIn').addClass('redBodyClicked');
+		setTimeout(function(){
+			$('#FrontPage').toggle('drop',{},1000);
+			$('#KeyIn').removeClass('redBodyClicked');
+			setTimeout(function(){
+				getLockboxInboundDetail();
+				$('#KeyInDetail').toggle('drop',{},1000);
+				setTimeout(function(){
+					$.getScript("javascripts/dndTree.js", function(){});
+
+   					},1001);
+				
+			},1200);
+				
+				
+		
+		},100);
+
+		//console.log($('#FrontPage'));
+	});
+	
+
+	
 	/*
 	$('#back-menu').click(function(e){
 		e.preventDefault();
@@ -251,7 +282,19 @@ $(document).ready(function() {
 	});
 
 
-
+	$('#back-menu2').click(function(e){
+		e.preventDefault();
+		
+		$('#KeyInDetail').toggle('drop',{direction:'right'},800);
+		
+		setTimeout(function(){
+			location.reload();
+			$('#FrontPage').toggle('drop',{},1000);
+			//$('.greySubBG-2').removeClass('hidden');
+			
+			
+		},800);
+	});
 
 
 

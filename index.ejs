@@ -15,11 +15,55 @@
 		<link type="text/css" href="stylesheets/bootstrap-arrows.css" rel="stylesheet">
 		<link type="text/css" href="stylesheets/style.css" rel="stylesheet">
 		
+		<style type="text/css">
+
+	.node {
+    cursor: pointer;
+  }
+  
+  .overlay{
+      background-color:#EEE;
+  }
+   
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:10px; 
+    font-family:sans-serif;
+  }
+   
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+</style>
 		
 		
 		
 		
-		<script type="text/javascript" src="http://mbostock.github.io/d3/d3.min.js"></script>
+		
+		<!--<script type="text/javascript" src="http://mbostock.github.io/d3/d3.min.js"></script>-->
+		<script src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript" src="javascripts/dial.chart.js"></script>
 		<script type="text/javascript" src = "javascripts/jquery-2.1.1.min.js"></script>
 		<script src="javascripts/jquery.sidr.min.js"></script>
@@ -27,6 +71,9 @@
 		<script src="javascripts/bootstrap-arrows.min.js"></script>
 		<!--<script src="javascripts/flipclock.min.js"></script>-->
 		<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<!--<script src="javascripts/dndTree.js"></script>-->
+		
+		
 		<!--
 		<script type="text/javascript">
 			$( document ).bind( "mobileinit", function() {
@@ -145,7 +192,7 @@
 					
 						
 						
-					<div class="col-sm-4 col-md-4 redSubBody" > 
+					<div class="col-sm-4 col-md-4 redSubBody" id="KeyIn"> 
 						<!--<div class="col-sm-6 col-md-6 col-sm-offset-3 clock" id="clock3"  ></div>-->
 						<div class="col-sm-6 col-md-6 box pull-left"  ><div class="innerBox" id="keyGreen" style="margin-top:1em;"><font class="digital" size="6" color="#00FF00">2890</font></div></div>
 						<div class="col-sm-6 col-md-6 box pull-right" ><div class="innerBox" id="keyRed" style="margin-top:1em;"><font class="digital" size="6" color="#FF0000">0001</font></div></div>
@@ -555,6 +602,21 @@
 
 		        </div>
 		    </div>
+		</div>
+		
+		<div class="row" id="KeyInDetail" style="display:none;">
+				<div class="whiteBG col-sm-12 col-md-12">
+							
+				<a id="back-menu2" class="navbar-brand" href="#" >
+					<font face="trebuchet MS" size="5"><span class="fa fa-angle-left fa-lg "></span></font>
+				</a>
+				
+				<a class="navbar-brand" rel="home" href="#" > Brand place holder
+					<!--<img style="max-width:200px; margin-top: -7px;"
+						 src="images/bank_of_america.png"> -->
+				</a>	
+				 <div id="tree-container"></div>
+				
 		</div>
 		<!--
 		</div>

@@ -1,0 +1,90 @@
+{
+    "name": "HLSC",
+    "children": [{
+        "name": "TCS",
+            	"children": [{
+                	"name": "S1",
+                	"children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            		}]
+            }, {
+                "name": "S2",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            		}]
+            }, {
+                "name": "S3",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            	}]
+            }, {
+                "name": "S4",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            	}]
+            }]
+   	 },{
+    	"name": "RM",
+            	"children": [{
+                	"name": "S1",
+                	"children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            		}]
+            }, {
+                "name": "S2",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            		}]
+            }, {
+                "name": "S3",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            	}]
+            }, {
+                "name": "S4",
+                "children": [{
+                		"name": "50",
+                		"color":"G"
+            		},{
+            			"name": "20",
+                		"color":"R"
+            	
+            	}]
+            }]     
+	}]
+}
