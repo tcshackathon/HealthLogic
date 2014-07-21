@@ -401,7 +401,8 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .text(function(d) {
                 return d.name;
             })
-            .style("fill-opacity", 0);
+            .style("fill-opacity", 0)
+            ;
 
         // phantom node to give us mouseover in a radius around it
         nodeEnter.append("circle")

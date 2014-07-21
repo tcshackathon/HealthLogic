@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reports</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="stylesheets/jquery.sidr.dark.css">
+		<link rel="stylesheet" href="stylesheets/jquery.jqplot.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+		
+		<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+		<script src = "javascripts/jquery-2.1.1.min.js"></script>
+		<script src = "javascripts/bootstrap.min.js"></script>
+		<script src="javascripts/jquery.sidr.min.js"></script>
+		
+		<script src="javascripts/jquery.jqplot.min.js"></script>
+		
+		<script src="javascripts/plugins/jqplot.barRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.barRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.pointLabels.min.js"></script>
+		<script src="javascripts/plugins/jqplot.dateAxisRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.canvasTextRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+		<script src="javascripts/plugins/jqplot.highlighter.min.js"></script>
+		<script src="javascripts/report.js"></script>
+		
+		
+		<style  type="text/css">
+		
+		.navbar-default {
+			background-color: #ffffff;
+			border-color: white;
+		}
+		
+		html {height: 100%;}
+		
+		body {
+				background-color: #565656;
+				
+				width:100%;
+				height:100%;
+				
+		}
+		
+		.whiteBG{
+			background-color: #ffffff;
+			height: 5%;
+		}
+		
+		.redBG{
+	
+				
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(46%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(53%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+			height: 1em;
+			display: table; 
+			border: 1px solid black;
+			width:50%;
+		}
+		
+		
+		.lightBG{
+			background-color: white;
+			display: table; 
+			/*border: 1px solid black;*/
+		}
+		
+		
+		.textAlignCenter {
+			text-align:center; 
+			vertical-align: middle;
+			display: table-cell; 
+			color: white;
+		}
+		
+		.textAlignLeft {
+			text-align:left; 
+			vertical-align: middle;
+			display: table-cell; 
+			color: white;
+		}
+		
+		.textAlignRight {
+			text-align:right; 
+			vertical-align: middle;
+			display: table-cell; 
+			color: white;
+		}
+		
+	
+		.panel{
+			border-radius:0px;
+			border: 1px solid grey;
+			height: 200px;
+		}
+		.panel-default >.panel-heading{
+			
+			/*background-color: #002060; */
+			background: -webkit-linear-gradient(top, #7cbed0 0%,#003366 100%); 
+			
+			color: white;
+			border-radius:0px;
+		}
+		
+		.panel-default >.panel-body{
+			background-color: white;
+			
+		}
+		.btn-default {
+			background-color:#C53030;
+			background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+			color: white;
+			border-color: black;
+		}
+	
+		
+		/* basic positioning */
+		.legend { list-style: none; }
+		.legend li { float: left; margin-left: auto; margin-right: auto; }
+		.legend span { border: 2px solid Black; float: left; width: 19px; height: 19px; margin: 0 auto; }
+		
+		.legend .superawesome { background-color: #82CCFF; }
+		.legend .awesome { background-color: #FFDEAD; }
+		.legend .kindaawesome { background-color: #FF8F73; }
+	
+		.nav {
+		  margin: 20px auto;
+		  width: 100px;
+		  list-style: none;
+		}
+
+		.nav li.active {
+		  background: white;
+		  color: white;
+		}
+
+		.nav li {
+		  width: 20%;
+		  height: 10px;
+		  float: left;
+		  text-align: center;
+		  background: #abc;
+		  line-height: 100px;
+		  border-right: 10px solid #3E413E;
+		  box-sizing: border-box;
+		  cursor: pointer;
+		}
+		
+		.prevClass {
+		
+			width:100px;
+			height:500px;
+			background-color:aqua;
+			text-align:center;
+			display:table-cell;
+			vertical-align:middle;
+		}
+		a { color: inherit; } 
+		
+		.inactiveLink {
+		   pointer-events: none;
+		   cursor: default;
+		}
+		
+		.label-success{
+			background-color:#66FFCC;
+			color: black;
+			margin-top: -14px;
+		}
+		
+		
+		.label-default{
+			background-color:#FFDEAD;
+			color: black;
+			margin-top: -14px;
+			
+		}
+		
+		.label-primary{
+			background-color:#FF8F73;
+			color: black;
+			margin-top: -14px;
+		}
+		.btn-default:hover,
+		.btn-default:focus,
+		.btn-default:active,
+		.btn-default.active,
+		.open .dropdown-toggle.btn-default {
+		  color: white;
+		  background-color: #CC3300;
+		  border-color: black;
+		}
+		
+		</style>
+		
+		
+		
+
+
+	</head>
+	<body>
+		
+		<!--<div class = "navbar navbar-default navbar-static-top">-->
+			<div class = "row">
+				<div class="whiteBG col-sm-12 col-md-12">
+					
+					<a id="simple-menu" class="navbar-brand" href="#sidr" >
+						<font face="trebuchet MS" size="5"><span class="fa fa-navicon "></span></font>
+					</a>
+					<a class="navbar-brand" rel="home" href="#" > Brand Place Holder
+						<!--<img style="max-width:200px; margin-top: -7px;"
+							 src="images/bank_of_america.png"> -->
+					</a>
+		
+					
+				</div>
+				
+				<div id="sidr" class="visible">
+				
+					<ul>
+						<li ><a href="/">1. Dashboards</a></li>
+						
+						<li><a href="/report" >2. Reports</a></li>
+					</ul>
+	
+				</div>
+				
+				<div class="redBG col-sm-6 col-md-6 col-xs-12">
+					
+						<div id="welcomeName" class="textAlignCenter"> Welcome Stewert Parbery</div>
+						<div id="lastLoginTime" class="textAlignCenter"> Your Last Login: 06-14-2014 04:00 PM EDT</div>
+						
+					
+				</div>
+				
+				<div class="redBG col-sm-6 col-md-6 col-xs-12">
+					
+						<div id="todaysDate" class="textAlignCenter"> Saturday June 14, 2014 </div>
+						<div id="todaysTime" class="textAlignCenter"> 09:00 PM EST</div>
+						
+					
+				</div>
+				
+				
+				
+				<!--
+				<div  class="col-sm-1 col-md-1 " >
+					<div  id="prev" class="pull-left" style="margin-top:250px;">
+						<font size="7" color="lightgrey"><span class="fa fa-caret-left fa-3x "></span></font>
+					</div>
+				</div>
+				-->
+				<div id="g1" class="col-sm-6 col-md-6 col-xs-12 visible" >
+					<div class="panel panel-default">
+						<!--<div class="panel-heading" >File Processing for - Last 7 Days</div>-->
+						<div class="panel-body" >
+							<div class="col-sm-12 col-md-12 col-xs-12  " style="height:265px">
+								
+								<div id="chart3" style="width:100%; height:100%  "  ></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div id="g2" class="col-sm-6 col-md-6 col-xs-12">
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">File Processing Status for - June 17, 2014</div>-->
+						<div class="panel-body">
+							<div class="col-sm-12 col-md-12 col-xs-12  " style="height:265px" >
+								<div id="chart2"  style="width:100%; height:100%  "></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+		
+				
+				<div id="g3" class="col-sm-12 col-md-12 col-xs-12 ">
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">TAT Status
+						
+						</div>-->	
+						<div class="panel-body">
+							<div class="col-sm-6 col-md-6 col-xs-12 col-sm-offset-6 col-md-offset-6 ">
+								
+								<form class="pull-right form-inline" role="search">
+									<div class="form-group">
+									  <input type="text" class="form-control" placeholder="Site Number">
+									</div>
+									<div class="form-group">
+									  <button type="submit" class="btn btn-default"> Filter</button>
+									</div>
+								</form>
+								
+								
+							</div>
+							<!--
+							<div class="col-sm-12 col-md-12">
+								<p>
+								  <label for="amount">Range:</label>
+								  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+								</p>
+								 
+								<div id="slider-range"></div>
+							</div> -->
+							<div class="col-sm-12 col-md-12 col-xs-12  " style="height:265px" >
+								<div id="chart1" style="width:100%; height:100%  "></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			
+			</div>
+			
+			
+	
+		<div class = "modal fade" id = "chart" role = "dialog">
+		    <div class = "modal-dialog modal-lg">
+		        
+				
+				<div class = "modal-content" >
+
+		                <div class = "modal-header">
+		                    <h4>File Processing for - Last 7 Days</h4>
+		                </div>
+						
+		                <div  class = "modal-body" style="height: 530px;" >
+							<div class="panel panel-default" style="height: 480px;">
+								<div class="panel-heading" >File Processing for - Last 7 Days</div>
+								<div class="panel-body" >
+									<div class="col-sm-12 col-md-12 col-xs-12"  style="height: 400px;">
+										
+										<div id="chartModal3" style="width:100%; height:100%  "  ></div>
+
+									</div>
+								</div>
+							</div>
+		                    <div class="col-sm-12 col-md-12">
+						 
+								<span class="label label-success pull-left"><font color="black" size="3" >File Processed</font></span>
+			
+								<span class="label label-primary pull-right"><font color="black" size="3" >File in Error</font></span>
+					
+								<span class="label label-default pull-right"><font color="black" size="3" >File in Process</font></span>
+					
+							</div>
+		                
+		                </div>
+						
+		                <div class = "modal-footer">
+                            <a class = "btn btn-default" data-dismiss = "modal" id="btnClose" >Close</a>    
+		                    
+		                </div>
+		            
+					
+		        </div>
+		    </div>
+		</div>
+		
+		
+		
+		<div class = "modal fade" id = "chart-3" role = "dialog">
+		    <div class = "modal-dialog modal-lg">
+
+				<div class = "modal-content" >
+
+					<div class = "modal-header">
+						<h4>TAT Status</h4>
+					</div>
+					
+					<div  class = "modal-body" style="height: 530px;" >
+						<div class="panel panel-default" style="height: 480px;">
+							<div class="panel-heading" >TAT Status</div>
+							<div class="panel-body" >
+								<div class="col-sm-12 col-md-12 col-xs-12"  style="height: 400px;">
+									
+									<div id="chartModal1" style="width:100%; height:100%  "  ></div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-12">
+						
+								<span class="label label-success pull-left"><font color="black" size="3" >Mean</font></span>
+			
+								<span class="label label-primary pull-right"><font color="black" size="3" >Median</font></span>
+					
+								<span class="label label-default pull-right"><font color="black" size="3" >TAT</font></span>
+					
+						</div>
+						
+						
+					</div>
+					<div class = "modal-footer">
+						<a class = "btn btn-default" data-dismiss = "modal" id="btnClose2" >Close</a>    
+						
+					</div>
+		            
+		        </div>
+		    </div>
+		</div>
+
+		
+		<div class = "modal fade" id = "chart-2" role = "dialog">
+		    <div class = "modal-dialog modal-lg">
+
+				<div class = "modal-content" >
+
+					<div class = "modal-header">
+						<h4>File Processing Status for - June 17, 2014</h4>
+					</div>
+					
+					<div  class = "modal-body" style="height: 530px;" >
+						<div class="panel panel-default" style="height: 480px;">
+							<div class="panel-heading" >File Processing Status for - June 17, 2014</div>
+							<div class="panel-body" >
+								<div class="col-sm-12 col-md-12 col-xs-12"  style="height: 400px;">
+									
+									<div id="chartModal2" style="width:100%; height:100%  "  ></div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-12">
+						
+								<span class="label label-success pull-left"><font color="black" size="3" >File Processed</font></span>
+			
+								<span class="label label-primary pull-right"><font color="black" size="3" >File in Error</font></span>
+					
+								<span class="label label-default pull-right"><font color="black" size="3" >File in Process</font></span>
+					
+						</div>
+					</div>
+					<div class = "modal-footer">
+						<a class = "btn btn-default" data-dismiss = "modal"  >Close</a>    
+						
+					</div>
+		            
+		        </div>
+		    </div>
+		</div>
+	
+	</body>
+
+	
+</html>

@@ -27,7 +27,7 @@
    
   .node circle {
     fill: #fff;
-    stroke: steelblue;
+    stroke: black;
     stroke-width: 1.5px;
   }
    
@@ -204,7 +204,7 @@
 
 					</div>
 					
-					<div class="col-sm-4 col-md-4 redSubBody" > 
+					<div class="col-sm-4 col-md-4 redSubBody" id="outboundProcess"> 
 						<!--<div class="col-sm-6 col-md-6 col-sm-offset-3 clock" id="clock5"  ></div>-->
 						<div class="col-sm-6 col-md-6 box pull-left"  ><div class="innerBox" id="outboundGreen" style="margin-top:1em;"><font class="digital" size="6" color="#00FF00">2890</font></div></div>
 						<div class="col-sm-6 col-md-6 box pull-right" ><div class="innerBox" id="outboundRed" style="margin-top:1em;"><font class="digital" size="6" color="#FF0000">0001</font></div></div>
@@ -591,6 +591,310 @@
 		</div>
 		
 		
+		<div class="row" id="outboundProcessDetail" style="display:none;">
+			<div class="whiteBG col-sm-12 col-md-12">
+							
+				<a id="back-menu3" class="navbar-brand" href="#" >
+					<font face="trebuchet MS" size="5"><span class="fa fa-angle-left fa-lg "></span></font>
+				</a>
+				
+				<a class="navbar-brand" rel="home" href="#" > Brand place holder
+					<!--<img style="max-width:200px; margin-top: -7px;"
+						 src="images/bank_of_america.png"> -->
+				</a>	
+				
+				<form class="navbar-form navbar-right form-inline" >
+					<div class="form-group">
+					  <input type="text" id="siteNumberInput2" class="form-control" placeholder="Site Number">
+					</div>
+					<select id="orgInput2" class="form-control">
+					  <option value="HLSC" >HLSC</option>
+					  <option value="TCS" >TCS</option>
+					  <option value="RM">RM</option>
+					  
+					</select>
+					
+					<div class="form-group">
+						<button type="submit" id="formSubmitOutboundDetail" class="btn btn-default"> <span class="fa fa-filter "></span></button>
+					</div>
+					
+				</form>
+				<div class="switch pull-right" style="margin-top:9px;">
+            		<input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            		<label for="cmn-toggle-2"></label>
+          		</div>
+			</div>
+			
+			<div class="redBG col-sm-6 col-md-6 col-xs-12">
+				
+					<div id="welcomeName2" class="textAlignLeft"> <font class="type">Lockbox Outbound File Processing</font></div>
+					<div id="lastLoginTime2" class="textAlignCenter"></div>
+					
+				
+			</div>
+			
+			<div class="redBG col-sm-6 col-md-6 col-xs-12">
+				
+					<div class="textAlignCenter todaysDate"> <font class="type">Saturday June 14, 2014 </font></div>
+					<div class="textAlignCenter todaysTime"> <font class="type">09:00 PM EST</font></div>
+					
+				
+			</div>
+			
+			
+			
+			<div class="greyBGOutLarge col-sm-3 col-md-3 ">
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="WTPGreen2" class="pull-left"><font class="digit" color="#00FF00">100</font> </div>
+
+				</div>
+				
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="WTPRed2" class="pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				
+				<div class="greySubBG col-sm-12 col-md-12 ">
+					<div id="WTPIcon2" class="textAlignCenter IconClass"  data-placement="bottom" title="Waiting to be Processed"> <font  size="9"><span class="fa fa-clock-o fa-lg"></span></font> </div>	
+				</div>
+				
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12" >
+					<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">Waiting to be Processed</font> </div>
+				</div>
+			</div>
+			
+			<div class="greySubBGArrow col-sm-1 col-md-1 hidden step step-1" style="left:10em">
+				
+				<div class="greySubBG-2 ">
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+				
+			</div>
+			<div class="greyBGOutMedium col-sm-3 col-md-3 ">
+					
+				<div class="greySubBG col-sm-6 col-md-6 col-xs-12">
+					<div id="SIGreen2" class="pull-left"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				<div class="greySubBG col-sm-6 col-md-6 col-xs-12">
+					<div id="SIRed2" class="pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div id="SIIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Site Identification"> <font  size="12"><span class="fa fa-home fa-lg"></span></font>	 </div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+						<div class="textAlignCenter"><font  class="Helvetica" color="#FFFFF">Site Identification</font> </div>
+				</div>
+				
+			</div>
+			
+			<div class="greySubBGArrow col-sm-1 col-md-1 hidden step step-2" style="left:21.7em">
+				
+				<div class="greySubBG-2 " >
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+				
+			</div>
+			
+			<div class="greyBGOutSmall col-sm-4 col-md-4 ">
+				<div class="greySubBG col-sm-6 col-md-6">
+					<div id="EVGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>	
+				<div class="greySubBG col-sm-6 col-md-6">
+					<div id="EVRed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 ">
+					<div id="EVIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Extraction and Validation">  <font size="12"><span class="fa fa-share-square-o fa-lg"></span></font> </div>
+				</div>	
+				<div class="greySubBG col-sm-12 col-md-12 ">
+						<div class="textAlignCenter"><font  class="Helvetica" color="#FFFFF">Extraction and Validation</font> </div>
+				</div>	
+				
+			</div>
+			<div class="greySubBGArrow-2 col-sm-1 col-md-1 hidden step step-3" style="left:27.2em">
+				<div class="greySubBG-2  "  >
+					 <img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+				
+			</div>
+
+			
+			
+			<div class="greyBGOutLarge col-sm-3 col-md-3 ">
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="DMGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="DMRed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12" >
+					<div id="DMIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Data Management"> <font size="12"><span class="fa fa-database fa-lg"></span></font> </div>
+				</div>	
+				
+				<div class="greySubBG col-sm-12 col-md-12 " >
+						<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">Data Management</font> </div>
+				</div>	
+				
+			</div>
+			
+			<div class="greySubBGArrow-3 col-sm-1 col-md-1 hidden step step-5 "style="left:9.5em">
+				
+				<div class="greySubBG-2 " >
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>		
+			</div>
+			
+			<div class="greyBGOutMedium col-sm-4 col-md-4 " style="position:absolute; left:17.75em; top:28.5em;">
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="PIGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				<div class="greySubBG col-sm-6 col-md-6 ">	
+					<div id="PIRed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div id="PIIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Payer Identification">  <font  size="12"><span class="fa fa-user fa-lg"></span></font> </div>
+				</div>	
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+						<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">Payer Identification</font> </div>
+				</div>	
+				
+			</div>
+			
+			<div class="greySubBGArrow-3 col-sm-1 col-md-1 hidden step step-4" style="left:21.2em">
+				
+				<div class="greySubBG-2 ">
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+			</div>
+			
+			<div class="greyBGOutSmall2 col-sm-3 col-md-3 ">
+				<div class="greySubBG col-sm-6 col-md-6 ">
+					<div id="BSGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+					
+				<div class="greySubBG col-sm-6 col-md-6 ">	
+					<div id="BSRed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				
+				<div class="greySubBG col-sm-12 col-md-12">
+					<div id="BSIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Batch Split">  <font size="12"><span class="fa fa-random fa-lg"></span></font> </div>
+				</div>	
+				
+				<div class="greySubBG col-sm-12 col-md-12 ">
+						<div class="textAlignCenter"><font class="Helvetica" class="type" color="#FFFFF">Batch Split</font> </div>
+				</div>	
+				
+				
+			</div>
+			
+			
+			<div class="greySubBGArrow-4 col-sm-1 col-md-1 hidden step step-6" style="left:4em">
+				<div class="greySubBG-2" >
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+			</div>
+			
+			<div class="greySubBGArrow-4 col-sm-1 col-md-1 hidden step step-4" style="left:27.2em">
+				<div class="greySubBG-2 " >
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+			</div>
+			
+			
+		
+			
+			<div class="greyBGOutSmall3 col-sm-4 col-md-4 ">
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div id="WLGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div class="textAlignCenter hidden"><font color="#3E413E">WL</font> </div>
+				</div>
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div id="WLRed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div id="WLIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Worklist Load"> <font size="12"><center><span class="fa fa-list-alt fa-lg"></span></center></font> </div>
+				</div>	
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">WorkList Load</font> </div>
+				</div>		
+				
+			</div>
+			
+			<div class="greySubBGArrow-5 col-sm-1 col-md-1 hidden step step-6" style="left:9.5em" >
+				<div class="greySubBG-2 " >
+					<img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+			</div>
+			
+			<!--<div class="greyBG col-sm-3 col-md-3 ">
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div id="IAGreen2" class="textAlignLeft"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div class="textAlignCenter hidden"><font color="#3E413E">IA</font> </div>
+				</div>
+				<div class="greySubBG col-sm-4 col-md-4 col-xs-4">
+					<div id="IARed2" class="textAlignRight pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div id="IAIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Image Archive">  <font  size="12"><span class="fa fa-archive fa-lg"></span></font></div>
+				</div>		
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">Image Archive</font> </div>
+				</div>	
+				
+			</div>
+			
+			<div class="greySubBGArrow-5 col-sm-1 col-md-1 hidden step step-5" style="left:21.2em">
+				<div class="greySubBG-2 " >
+					 <img src="images/Arrow White.png"  width="70" height="30">
+				</div>	
+			</div>
+			
+		
+			<div class="greyBG col-sm-3 col-md-3 ">
+				
+				<div class="greySubBG col-sm-6 col-md-6 col-xs-4">
+					<div id="ISGreen2" class="pull-left"><font class="digit" color="#00FF00">100</font> </div>
+				</div>
+				
+				<div class="greySubBG col-sm-6 col-md-6 col-xs-4">
+					<div id="ISRed2" class="pull-right"><font class="digit" color="#FF0000">10</font></div>
+				</div>
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12">
+					<div id="ISIcon2" class="textAlignCenter IconClass" data-container="body" data-toggle="popover" data-placement="bottom" data-content="This is where Description goes" title="Image Split & Conversion">  <font size="12"><span class="fa fa-image fa-lg"></span></font></div>
+				</div>		
+				<div class="greySubBG col-sm-12 col-md-12 col-xs-12 ">
+					<div class="textAlignCenter"><font class="Helvetica" color="#FFFFF">Image Split &amp Conversion</font> </div>
+				</div>	
+				
+				
+				
+			</div> -->
+			
+			<div class="whiteBGButtom3 col-sm-12 col-md-12 col-xs-12" >
+					
+				<div class="col-sm-6 col-md-6">
+						
+					
+	
+				</div>
+
+				<div class="col-sm-6 col-md-6">
+					<span class="label label-primary pull-right"><font color="#FFFFF" size="2" >File in Error</font></span>
+					<span class="label label-default pull-right"><font color="#FFFFF" size="2" >File in Process</font></span>
+				</div>
+					
+					
+			</div>
+				
+			
+		</div>
+		
+		
 		<div class = "modal fade" id = "progressModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
 		    <div class = "modal-dialog modal-sm">
 
@@ -605,7 +909,8 @@
 		</div>
 		
 		<div class="row" id="KeyInDetail" style="display:none;">
-				<div class="whiteBG col-sm-12 col-md-12">
+				
+			
 							
 				<a id="back-menu2" class="navbar-brand" href="#" >
 					<font face="trebuchet MS" size="5"><span class="fa fa-angle-left fa-lg "></span></font>
@@ -614,7 +919,25 @@
 				<a class="navbar-brand" rel="home" href="#" > Brand place holder
 					<!--<img style="max-width:200px; margin-top: -7px;"
 						 src="images/bank_of_america.png"> -->
-				</a>	
+				</a>
+			<div class="redBG col-sm-6 col-md-6 col-xs-12">
+				
+					<div id="welcomeName" class="textAlignLeft"> <font class="type">Lockbox Inbound File Processing</font></div>
+					<div id="lastLoginTime" class="textAlignCenter"></div>
+					
+				
+			</div>
+			
+			<div class="redBG col-sm-6 col-md-6 col-xs-12">
+				
+					<div class="textAlignCenter todaysDate"> <font class="type">Saturday June 14, 2014 </font></div>
+					<div class="textAlignCenter todaysTime"> <font class="type">09:00 PM EST</font></div>
+					
+				
+			</div>
+				
+				
+					
 				 <div id="tree-container"></div>
 				
 		</div>

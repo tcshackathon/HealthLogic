@@ -176,8 +176,10 @@ $(document).ready(function() {
 					unlockBack = false
 					sequence(i);
 					i++;
+					document.getElementById("cmn-toggle-1").disabled = true;
 					if(i==7){
 						unlockBack = true;
+						document.getElementById("cmn-toggle-1").disabled = false;
 						clearInterval(arrowSequence);
 					}
 				},1000);
@@ -188,6 +190,51 @@ $(document).ready(function() {
 		//console.log($('#FrontPage'));
 	});
 	
+	
+	$('#outboundProcess').click(function(e){
+		document.getElementById('cmn-toggle-2').checked = true;
+		e.preventDefault();
+		$('#outboundProcess').addClass('redBodyClicked');
+		setTimeout(function(){
+			$('#FrontPage').toggle('drop',{},1000);
+			$('#outboundProcess').removeClass('redBodyClicked');
+			setTimeout(function(){
+				getLockboxOutboundDetail();
+				$('#outboundProcessDetail').toggle('drop',{},1000);
+				setInterval(function(){
+					getLockboxOutboundDetail();
+					if($('.boxFlip').hasClass('animated zoomIn')){
+						$('.boxFlip').removeClass('animated zoomIn');
+					
+					}
+					else{
+						
+						$('.boxFlip').addClass('animated zoomIn');
+					}	
+				},350000);
+				
+			},1200);
+			var i = -1;
+				
+			var arrowSequence =	setInterval(function(){
+					unlockBack = false
+					sequence(i);
+					i++;
+					document.getElementById("cmn-toggle-2").disabled = true;
+					if(i==7){
+						unlockBack = true;
+						document.getElementById("cmn-toggle-2").disabled = false;
+						clearInterval(arrowSequence);
+					}
+				},1000);
+				
+		
+		},100);
+
+		//console.log($('#FrontPage'));
+	});
+	
+	
 	var unlockBack = true;
 	
 	function sequence(i){	
@@ -197,20 +244,18 @@ $(document).ready(function() {
 	
 	}
 	
-	
-	
+			
+
 	$('#KeyIn').click(function(e){
 
 		e.preventDefault();
 
-		
-		document.getElementById('cmn-toggle-1').checked = true;
+
 		$('#KeyIn').addClass('redBodyClicked');
 		setTimeout(function(){
 			$('#FrontPage').toggle('drop',{},1000);
 			$('#KeyIn').removeClass('redBodyClicked');
 			setTimeout(function(){
-				getLockboxInboundDetail();
 				$('#KeyInDetail').toggle('drop',{},1000);
 				setTimeout(function(){
 					$.getScript("javascripts/dndTree.js", function(){});
@@ -254,8 +299,30 @@ $(document).ready(function() {
 					unlockBack = false
 					sequence(i);
 					i++;
+					document.getElementById("cmn-toggle-1").disabled = true;
 					if(i==7){
 						unlockBack = true;
+						document.getElementById("cmn-toggle-1").disabled = false;
+						clearInterval(arrowSequence);
+					}
+				},1000);
+    	}
+	});
+	
+	$('#cmn-toggle-2').change(function() {   
+		if(!this.checked) {
+        	$('.step').addClass('hidden');
+    	}else{
+    		var i = 1;
+				
+			var arrowSequence =	setInterval(function(){
+					unlockBack = false
+					sequence(i);
+					i++;
+					document.getElementById("cmn-toggle-2").disabled = true;
+					if(i==7){
+						unlockBack = true;
+						document.getElementById("cmn-toggle-2").disabled = false;
 						clearInterval(arrowSequence);
 					}
 				},1000);
@@ -296,6 +363,25 @@ $(document).ready(function() {
 		},800);
 	});
 
+	$('#back-menu3').click(function(e){
+		e.preventDefault();
+		if(unlockBack){
+		$('#outboundProcessDetail').toggle('drop',{direction:'right'},800);
+		
+		setTimeout(function(){
+			$('#FrontPage').toggle('drop',{},1000);
+			//$('.greySubBG-2').removeClass('hidden');
+			for(var k=1;k<7;k++){
+				for(var j = 0; j<document.getElementsByClassName('step-'+k).length;j++){
+					document.getElementsByClassName('step-'+k)[j].classList.add("hidden")
+				}	
+			}
+			
+			
+		},800);
+		}
+	});
+	
 
 
 
@@ -507,6 +593,55 @@ $(document).ready(function() {
 			alert('Server-Error-1002');
 		}
 	}
+	
+		function getLockboxOutboundDetail(){
+		try{
+			//console.log(sessionStorage.data);
+			
+			var data = $.parseJSON(sessionStorage.data);
+			console.log(data);
+			$('#WTPGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S1.G+'</strong></font></div>');
+			$('#WTPRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S1.R+'</strong></font></div>');
+			
+			
+			$('#SIGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S2.G+'</strong></font></div>');
+			$('#SIRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S2.R+'</strong></font></div>');
+			
+			
+			$('#EVGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S3.G+'</strong></font></div>');
+			$('#EVRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S3.R+'</strong></font></div>');
+			
+			
+			$('#BSGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S4.G+'</strong></font></div>');
+			$('#BSRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S4.R+'</strong></font></div>');
+			
+			
+			$('#PIGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S5.G+'</strong></font></div>');
+			$('#PIRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S5.R+'</strong></font></div>');
+			
+			
+			$('#DMGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S6.G+'</strong></font></div>');
+			$('#DMRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S6.R+'</strong></font></div>');
+			
+			
+			$('#ISGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S7.G+'</strong></font></div>');
+			$('#ISRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S7.R+'</strong></font></div>');
+			
+			
+			$('#IAGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S8.G+'</strong></font></div>');
+			$('#IARed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S8.R+'</strong></font></div>');
+			
+			
+			$('#WLGreen2').html('<div class="boxFlip"><font class="digit" color="#00FF00"><strong>'+data.S9.G+'</strong></font></div>');
+			$('#WLRed2').html('<div class="boxFlip"><font class="digit" color="#FF0000"><strong>'+data.S9.R+'</strong></font></div>');
+			
+		}
+		
+		catch(err){
+			alert('Server-Error-1002');
+		}
+	}
+	
 	
 	
 	setInterval(function(){
